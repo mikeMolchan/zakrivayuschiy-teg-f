@@ -9,8 +9,213 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+/* TODO:
+laptop -> mobile( <= 375px )
+
+svg
+*/
+
+html {
+  display: flex;
+  justify-content: center;
+}
 
 .page {
+  inline-size: var(--block-width);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+
+  padding-top: calc(2 * var(--cards-gap));
+  padding-bottom: calc(2 * var(--cards-gap));
+  font-family: var(--font);
+  color: var(--font-color);
+  font-variation-settings: 'wght' var(--font-light);
+  font-size: var(--font-size);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+
+  background-color: white;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  border: 2px solid black;
+  margin-bottom: calc(2 * var(--cards-gap));
+}
+
+.main-heading {
+  font-size: clamp(49px, calc(3.5vw + 15px), 65px);
+}
+
+.sub-heading {
+  margin-top: 3%;
+  font-size: clamp(14px, calc(1vw + 10px), 23px);
+}
+
+.button {
+  display: block;
+  background-color: white;
+  font-family: var(--accent-font);
+  font-size: var(--font-size-s);
+  border: 2px solid currentColor;
+  padding: 2%;
+}
+
+/* main content */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cards-gap);
+}
+
+/* card item */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background-color: white;
+}
+
+
+.card-heading {
+  font-variation-settings: 'wght' var(--font-bold);
+  font-size: var(--font-size);
+  padding: 1%;
+}
+
+/* card img */
+.img-wrapper {
+  position: relative;
+  block-size: var(--block-width);
+}
+
+.img-block {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  block-size: 100%;
+}
+
+.card-img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: right center;
+  aspect-ratio: 1 / 1;
+}
+
+.grayscale {filter: grayscale(80%);}
+
+.saturation {filter: saturate(300%);}
+
+.hue-rotation {filter: hue-rotate(30deg);}
+
+.invert {filter: invert(0.7);}
+
+.sepia {filter: sepia(90%);}
+
+.blur {filter: blur(1rem);}
+
+.multi-filter {
+  filter: hue-rotate(90deg)
+  contrast(60%)
+  brightness(120%)
+  blur(0.1rem);
+}
+
+.img-label {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--accent-font);
+  right: 25px;
+  top: 25px;
+  font-size: var(--font-size-s);
+  color: transparent;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+    1px 1px 0 var(--light-gray),
+    -1px -1px 0 var(--light-gray),
+    1px -1px 0 var(--light-gray),
+    -1px 1px 0 var(--light-gray);
+}
+
+@supports ((text-stroke: 1px var(--light-gray)) or (-webkit-text-stroke: 1px var(--light-gray))) {
+  .img-label {
+    text-shadow: none;
+    text-stroke: 1px var(--light-gray);
+    -webkit-text-stroke: 1px var(--light-gray);
+  }
+}
+
+/* card description */
+.card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.like-button {
+  inline-size: 130px;
+  padding: 12px 0;
+}
+
+.like-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.download-button {
+  inline-size: 355px;
+  margin: var(--cards-gap) auto 0 auto;
+}
+
+/* dialog window */
+.dialog-window[open] {
+  inline-size: 353px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog-window[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
+.window-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-text {
+  font-family: var(--accent-font);
+  font-size: var(--font-size-s);
+  line-height: 1.5;
+  text-transform: uppercase;
+  inline-size: 75%;
+}
+
+.button-close {
+  inline-size: 100%;
+  margin-top: 10%;
+}
+
+@media (width <= 375px) {
+  .download-button {
+    inline-size: 306px;
+  }
+
+  .download-button .button__text {
+    display: block;
+    margin-top: 5%;
+  }
 }

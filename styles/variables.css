@@ -1,1 +1,38 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font: Inter, monospace;
+    --accent-font: Press Start2P;
+    --font-light: 410;
+    --font-bold: 715;
+    --accent-font-light: 400;
+    --font-size: 18px;
+    --font-size-s: 14px;
+    --font-color: #000;
+    --light-gray: #d3d3d3;
+
+    --card-bg-image: url('../images/bg-image.png');
+    --bg-gradient: 
+        repeating-linear-gradient(
+          #d3d3d3 0 2px,
+          transparent 2px 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          #d3d3d3 0 2px,
+          transparent 2px 4px
+        ),
+        linear-gradient(
+          to bottom,
+          #e7e7e7 0.01%,
+          #1a1a1a 100%
+        );
+
+    --block-width: clamp(375px, calc(50vw - 20px), 1280px);
+    --cards-gap: 50px;
+}
+
+@media (width <= 375px) {
+  :root {
+    --block-width: 100vw;
+  }
+}
