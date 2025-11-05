@@ -10,15 +10,49 @@
 
 */
 /* TODO:
-laptop -> mobile( <= 375px )
-
-svg
+heart
+bg
+floppy
 */
 
 html {
   display: flex;
   justify-content: center;
 }
+
+:root {
+  --animation-contour-color: black;
+  --animation-sparks-color: transparent;
+  --animation-main-body-color: transparent;
+  --animation-core-color: transparent;
+  --animation-sparks-color: transparent;
+}
+
+.is-liked {
+  --animation-contour-color: red;
+  --animation-sparks-color: red;
+  --animation-main-body-color: red;
+  --animation-core-color: red;
+  --animation-sparks-color: transparent;
+}
+
+.card__icon-button:hover {
+  --animation-contour-color: black;
+  --animation-sparks-color: black;
+  --animation-main-body-color: black;
+  --animation-core-color: black;
+  --animation-sparks-color: transparent;
+}
+
+.card__icon-button:active {
+  --animation-contour-color: black;
+  --animation-sparks-color: red;
+  --animation-main-body-color: red;
+  --animation-core-color: red;
+  --animation-sparks-color: transparent;
+}
+
+
 
 .page {
   inline-size: var(--block-width);
@@ -40,8 +74,8 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20%;
-  padding-bottom: 20%;
+  padding-top: 18%;
+  padding-bottom: 18%;
 
   background-color: white;
   font-family: var(--accent-font);
@@ -61,11 +95,57 @@ html {
 
 .button {
   display: block;
+  position: relative;
   background-color: white;
   font-family: var(--accent-font);
   font-size: var(--font-size-s);
-  border: 2px solid currentColor;
+  color: white;
+  border: 2px solid black;
   padding: 2%;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 black;
+  transition: box-shadow 0.3 ease;
+}
+
+.button::before {
+  inline-size: 100%;
+  block-size: 100%;
+  inset: 0;
+  content: '';
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: black;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid black;
+  transition: border 0.3 ease;
+}
+
+/* .floppy-icon */
+.button__text {
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
 }
 
 /* main content */
@@ -87,7 +167,7 @@ html {
 .card-heading {
   font-variation-settings: 'wght' var(--font-bold);
   font-size: var(--font-size);
-  padding: 1%;
+  padding: 0.5% 2% 0.5% 2%;
 }
 
 /* card img */
@@ -161,7 +241,7 @@ html {
   padding: 25px;
 }
 
-.like-button {
+.card__like-button {
   inline-size: 130px;
   padding: 12px 0;
 }
@@ -175,6 +255,7 @@ html {
 
 .download-button {
   inline-size: 355px;
+  position: relative;
   margin: var(--cards-gap) auto 0 auto;
 }
 
@@ -216,6 +297,20 @@ html {
 
   .download-button .button__text {
     display: block;
+    margin-top: 5%;
+  }
+
+  .header {
+    padding-top: 32%;
+    padding-bottom: 32%;
+  }
+
+  .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .sub-heading {
     margin-top: 5%;
   }
 }

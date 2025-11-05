@@ -9,6 +9,8 @@
     --font-size-s: 14px;
     --font-color: #000;
     --light-gray: #d3d3d3;
+    --animation-contour-color: var(--font-color);
+    --animation-fill-color: red;
 
     --card-bg-image: url('../images/bg-image.png');
     --bg-gradient: 
