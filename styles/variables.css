@@ -7,10 +7,10 @@
     --accent-font-light: 400;
     --font-size: 18px;
     --font-size-s: 14px;
-    --font-color: #000;
+    --font-color: black;
     --light-gray: #d3d3d3;
-    --animation-contour-color: var(--font-color);
-    --animation-fill-color: red;
+    --contour-color: black;
+    --accent-color: red;
 
     --card-bg-image: url('../images/bg-image.png');
     --bg-gradient: 

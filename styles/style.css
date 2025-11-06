@@ -10,49 +10,13 @@
 
 */
 /* TODO:
-heart
-bg
-floppy
+refactoring
 */
 
 html {
   display: flex;
   justify-content: center;
 }
-
-:root {
-  --animation-contour-color: black;
-  --animation-sparks-color: transparent;
-  --animation-main-body-color: transparent;
-  --animation-core-color: transparent;
-  --animation-sparks-color: transparent;
-}
-
-.is-liked {
-  --animation-contour-color: red;
-  --animation-sparks-color: red;
-  --animation-main-body-color: red;
-  --animation-core-color: red;
-  --animation-sparks-color: transparent;
-}
-
-.card__icon-button:hover {
-  --animation-contour-color: black;
-  --animation-sparks-color: black;
-  --animation-main-body-color: black;
-  --animation-core-color: black;
-  --animation-sparks-color: transparent;
-}
-
-.card__icon-button:active {
-  --animation-contour-color: black;
-  --animation-sparks-color: red;
-  --animation-main-body-color: red;
-  --animation-core-color: red;
-  --animation-sparks-color: transparent;
-}
-
-
 
 .page {
   inline-size: var(--block-width);
@@ -132,11 +96,8 @@ html {
   background-color: transparent;
 }
 
-.card__icon-button:focus {
-  outline: none;
-}
-
 .card__icon-button:focus-visible {
+  outline: none;
   border: 2px solid black;
   transition: border 0.3 ease;
 }
@@ -144,6 +105,13 @@ html {
 /* .floppy-icon */
 .button__text {
   mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
+}
+
+.floppy-icon {
+  mix-blend-mode: difference;
+  background-color: black;
   position: relative;
   z-index: 2;
 }
@@ -272,7 +240,7 @@ html {
 
 .window-description {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
