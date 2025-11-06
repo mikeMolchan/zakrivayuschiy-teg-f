@@ -11,7 +11,6 @@
     --light-gray: #d3d3d3;
     --contour-color: black;
     --accent-color: red;
-
     --card-bg-image: url('../images/bg-image.png');
     --bg-gradient: 
         repeating-linear-gradient(
@@ -28,7 +27,6 @@
           #e7e7e7 0.01%,
           #1a1a1a 100%
         );
-
     --block-width: clamp(375px, calc(50vw - 20px), 1280px);
     --cards-gap: 50px;
 }

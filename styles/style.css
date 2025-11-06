@@ -9,9 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-/* TODO:
-refactoring
-*/
 
 html {
   display: flex;
@@ -22,7 +19,6 @@ html {
   inline-size: var(--block-width);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-
   padding-top: calc(2 * var(--cards-gap));
   padding-bottom: calc(2 * var(--cards-gap));
   font-family: var(--font);
@@ -40,11 +36,10 @@ html {
   align-items: center;
   padding-top: 18%;
   padding-bottom: 18%;
-
   background-color: white;
   font-family: var(--accent-font);
   text-transform: uppercase;
-  border: 2px solid black;
+  border: 2px solid currentColor;
   margin-bottom: calc(2 * var(--cards-gap));
 }
 
@@ -52,11 +47,7 @@ html {
   font-size: clamp(49px, calc(3.5vw + 15px), 65px);
 }
 
-.sub-heading {
-  margin-top: 3%;
-  font-size: clamp(14px, calc(1vw + 10px), 23px);
-}
-
+/* buttons */
 .button {
   display: block;
   position: relative;
@@ -64,6 +55,7 @@ html {
   font-family: var(--accent-font);
   font-size: var(--font-size-s);
   color: white;
+  text-align: center;
   border: 2px solid black;
   padding: 2%;
 }
@@ -102,21 +94,19 @@ html {
   transition: border 0.3 ease;
 }
 
-/* .floppy-icon */
-.button__text {
-  mix-blend-mode: difference;
-  position: relative;
-  z-index: 2;
-}
-
+.button__text,
 .floppy-icon {
   mix-blend-mode: difference;
-  background-color: black;
   position: relative;
   z-index: 2;
 }
 
 /* main content */
+.sub-heading {
+  margin-top: 3%;
+  font-size: clamp(14px, calc(1vw + 10px), 23px);
+}
+
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -134,7 +124,7 @@ html {
 .card-heading {
   font-variation-settings: 'wght' var(--font-bold);
   font-size: var(--font-size);
-  padding: 0.5% 2% 0.5% 2%;
+  padding: 0.5% 2%;
 }
 
 /* card img */
@@ -268,8 +258,7 @@ html {
   }
 
   .header {
-    padding-top: 32%;
-    padding-bottom: 32%;
+    padding: 32% 0;
   }
 
   .floppy-icon {
