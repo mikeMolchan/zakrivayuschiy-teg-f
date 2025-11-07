@@ -106,7 +106,6 @@ html {
 }
 
 /* main content */
-/* TODO: Некорректно указан отступ на мобильных. */
 .sub-heading {
   margin-top: 3%;
   font-size: clamp(14px, calc(1vw + 10px), 23px);
@@ -269,20 +268,16 @@ html {
     display: block;
     margin-top: 5%;
   }
+  
+  .download-button .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
 
   .header {
     padding: 32% 0;
   }
 
-  .floppy-icon {
-    inline-size: 28px;
-    block-size: 28px;
-  }
-
-  .dialog-window .floppy-icon {
-    inline-size: 39px;
-    block-size: 39px;
-  }
 
   .sub-heading {
     margin-top: 5%;
