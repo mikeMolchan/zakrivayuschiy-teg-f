@@ -10,7 +10,7 @@
 
 */
 
-@keyframes heart {
+@keyframes heartGrow {
     from {
         scale: 1;
     }
@@ -20,7 +20,7 @@
     }
 }
 
-@keyframes sparks {
+@keyframes sparksShow {
     from {
         opacity: 0;
     }
@@ -31,26 +31,28 @@
 }
 
 /* initial colors */
+/* Для элемента  не указано начальное состояние. */
 .main-body,
 .core {
   fill: transparent;
 }
 
+/* Для элемента  не указано начальное состояние. */
 .contour {
   fill: var(--contour-color);
 }
 
+/* Для элемента  не указано начальное состояние. */
 .sparks {
   opacity: 0;
   fill: var(--accent-color);
 }
 
+/* При уходе курсора с иконки отсутствует плавный переход.  */
 /* :hover */
-.like-icon:hover .contour {transition: fill 0.1s linear;}
+.like-icon:hover .core {transition: fill 0.3s linear;}
 
-.like-icon:hover .core {transition: fill 0.3 linear 0.03s;}
-
-.like-icon:hover .main-body {transition: fill 0.3s linear;}
+.like-icon:hover .main-body {transition: fill 0.3s linear 0.05;}
 
 .like-icon:hover .main-body,
 .like-icon:hover .contour,
@@ -65,7 +67,7 @@
 }
 
 /* :active */
-.like-icon:active .core {transition: fill 0.3 linear;}
+.like-icon:active .core {transition: fill 0.3s linear;}
 
 .like-icon:active .main-body {transition: fill 0.3s linear 0.05s;}
 
@@ -74,8 +76,9 @@
   fill: var(--accent-color);
 }
 
+/* Отсутствует плавность перехода при снятии лайка. */
 /* .is-liked */
-.is-liked .core {transition: fill 0.3 linear;}
+.is-liked .core {transition: fill 0.3s linear;}
 
 .is-liked .main-body {transition: fill 0.3s linear 0.05s;}
 
@@ -89,9 +92,9 @@
 
 .is-liked .heart {
   transform-origin: center;
-  animation: heart 0.3s ease-in 0.1s 1;
+  animation: heartGrow 0.3s ease-in 0.1s 1;
 }
 
 .is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s 1;
+  animation: sparksShow 0.3s ease-in 0.3s 1;
 }
