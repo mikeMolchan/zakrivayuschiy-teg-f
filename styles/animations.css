@@ -31,28 +31,30 @@
 }
 
 /* initial colors */
-/* Для элемента  не указано начальное состояние. */
-.main-body,
+.main-body {
+    fill: transparent;
+    transition: fill 0.3s linear 0.05s;
+}
+
 .core {
   fill: transparent;
+  transition: fill 0.3s linear;
 }
 
-/* Для элемента  не указано начальное состояние. */
 .contour {
   fill: var(--contour-color);
+  transition: fill 0.3s linear 0.06s;
 }
 
-/* Для элемента  не указано начальное состояние. */
 .sparks {
-  opacity: 0;
   fill: var(--accent-color);
+  opacity: 0;
 }
 
-/* При уходе курсора с иконки отсутствует плавный переход.  */
 /* :hover */
 .like-icon:hover .core {transition: fill 0.3s linear;}
 
-.like-icon:hover .main-body {transition: fill 0.3s linear 0.05;}
+.like-icon:hover .main-body {transition: fill 0.3s linear 0.05s;}
 
 .like-icon:hover .main-body,
 .like-icon:hover .contour,
@@ -76,7 +78,6 @@
   fill: var(--accent-color);
 }
 
-/* Отсутствует плавность перехода при снятии лайка. */
 /* .is-liked */
 .is-liked .core {transition: fill 0.3s linear;}
 
