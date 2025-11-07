@@ -268,7 +268,7 @@ html {
     display: block;
     margin-top: 5%;
   }
-  
+
   .download-button .floppy-icon {
     inline-size: 28px;
     block-size: 28px;
@@ -277,7 +277,6 @@ html {
   .header {
     padding: 32% 0;
   }
-
 
   .sub-heading {
     margin-top: 5%;
